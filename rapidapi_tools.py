@@ -15,7 +15,7 @@ Wrap RapidAPI & OpenAPI specs into AutoGen FunctionTool objects.
 from __future__ import annotations
 import os, re
 from inspect import Signature, Parameter
-from typing  import Any, Dict, List
+from typing  import Any, Dict, List, Optional
 
 from langchain_core.tools import Tool
 
