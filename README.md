@@ -7,12 +7,19 @@ We study scheming in LLM agents, in which agents covertly pursue misaligned goal
 
 ## Dataset Introduction
 
-**SchemeBench** (`./SchemeBench/`) is the benchmark dataset. It contains **400** agentic scheming scenarios synthesized through a factorized framework that varies tool domains, instrumental goals, oversight conditions, and pressure mechanisms.
+**SchemeBench** (`./SchemeArena/`) is the benchmark dataset. It contains **400** agentic scheming scenarios synthesized through a factorized framework that varies tool domains, instrumental goals, oversight conditions, and pressure mechanisms.
+
+The dataset is hosted on Hugging Face at [launch/SchemeArena](https://huggingface.co/datasets/launch/SchemeArena). Download it into `./SchemeArena/` (the layout `run_agents.py` reads) with:
+
+```bash
+pip install huggingface_hub
+python download_data.py
+```
 
 Each scenario lives in its own folder:
 
 ```
-SchemeBench/
+SchemeArena/
   example_1/
     data_1.json      # scenario metadata and prompts
     files.json       # manifest of initial workspace files
@@ -22,7 +29,13 @@ SchemeBench/
   example_400/
 ```
 
-A flattened export of all scenarios is also available in `schemebench.jsonl` (one JSON object per line).
+A flattened export of all scenarios (one JSON object per line) is also on Hugging Face as `data/schemebench.jsonl` and can be loaded with:
+
+```python
+from datasets import load_dataset
+
+ds = load_dataset("launch/SchemeArena", split="test")
+```
 
 ### Scenario categories
 
@@ -71,10 +84,10 @@ This should create `./dev_tools_v3/`, which is the default search path used by `
 
 ### What it does
 
-1. Loads each scenario from `SchemeBench/example_{id}/data_{id}.json`
+1. Loads each scenario from `SchemeArena/example_{id}/data_{id}.json`
 2. Builds the system/user prompt for the chosen setup (oversight + pressure)
 3. Gives the agent filesystem tools (`create_file`, `read_file`, `list_files`, `write_file`) plus any scenario-specific RapidAPI tools
-4. Saves the full run to `SchemeBench/example_{id}/s2_output_{id}.json`
+4. Saves the full run to `SchemeArena/example_{id}/s2_output_{id}.json`
 
 
 ### Basic usage
