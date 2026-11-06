@@ -163,7 +163,12 @@ A trajectory is labeled scheming if the judge finds evidence of a misaligned goa
 
 
 # License
-MIT License with an additional clause
+- **Code** in this repository: MIT License (below).
+- **Data** (the SchemeArena scenarios on [Hugging Face](https://huggingface.co/datasets/launch/SchemeArena)): [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+We ask that the code and data be used only to improve the safety and security of AI systems, and not to train agents to perform covert behavior.
+
+MIT License
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -174,9 +179,6 @@ furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
-Additional clause: We prohibit using the dataset and benchmark for purposes
-besides improving the safety and security of AI systems.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
