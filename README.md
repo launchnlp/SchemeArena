@@ -166,7 +166,7 @@ A trajectory is labeled scheming if the judge finds evidence of a misaligned goa
 - **Code** in this repository: MIT License (below).
 - **Data** (the SchemeArena scenarios on [Hugging Face](https://huggingface.co/datasets/launch/SchemeArena)): [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
-We ask that the code and data be used only to improve the safety and security of AI systems, and not to train agents to perform covert behavior.
+SchemeArena is intended for AI safety research.
 
 MIT License
 
